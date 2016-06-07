@@ -1,16 +1,15 @@
-n=int(input("Enter the number of inputs:"));
+n=int(input("Enter the no. of elements:"))
 arr=[]
-p=0
+c=0
 for i in range(0,n):
-	v=int(input("\n Enter element:"))
-	arr.append(v)
-for i in range(0,n):
-	for j in range(i+1,n):
-		if(arr[i]==arr[j] and p==0):
-			    print("\nElement is ",arr[i])
-			    p=1;
-		
-	if(p>0):
-		break
-if(p==0):
-	print("\n No duplicates")
+    v=int(input("Enter the value:"))
+    arr.append(v)
+    if(i>0 and c==0):
+        for j in range(0,i):
+            if(v==arr[j]):
+                dup=v
+                c=1
+if(c==1):
+    print("\nDuplicate:",dup)                
+else:
+    print("\n No duplicate")
